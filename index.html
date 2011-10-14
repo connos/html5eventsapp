@@ -1,0 +1,235 @@
+<!doctype html>
+
+
+<!--[if IEMobile 7]><html class="no-js iem7 oldie"><![endif]-->
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+
+<title>HTML5 events app</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2"></script>
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="css/style.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<script src="js/libs/selectivizr-min.js"></script>
+<![endif]-->
+
+<!-- JavaScript -->
+<script src="js/libs/modernizr-2.0.6.min.js"></script>
+
+<!-- For iPhone 4 -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
+<!-- For iPad 1-->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
+<!-- For iPhone 3G, iPod Touch and Android -->
+<link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
+<!-- For Nokia -->
+<link rel="shortcut icon" href="img/l/apple-touch-icon.png">
+<!-- For everything else -->
+<link rel="shortcut icon" href="/favicon.ico">
+
+<!--iOS. Delete if not required -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-startup-image" href="img/splash.png">
+
+<!--Microsoft. Delete if not required -->
+<meta http-equiv="cleartype" content="on">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--[if lt IE 7 ]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script><script type="text/javascript">window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script><![endif]-->
+
+</head>
+
+<body class="clearfix">
+	
+	<header role="banner">
+		<h1>HTML5 events app</h1>
+	</header>
+	<nav>
+		<ul class="clearfix">
+			<li><a href="">nav</a></li>
+			<li><a href="">nav</a></li>
+		</ul>
+	</nav>
+	
+	<div id="my-events-wrapper">
+		<ul>
+			<li>Event 1 <a class="edit-event" href="">Edit</a> <a class="delete-event" href="">Delete</a> <a class="delete-event" href="">Duplicate</a></li>
+			<li>Event 2 <a class="edit-event" href="">Edit</a> <a class="delete-event" href="">Delete</a> <a class="delete-event" href="">Duplicate</a></li>
+		</ul>
+	</div>
+	
+	<div id="event-form-wrapper">
+		<form>
+			<ul>
+				<li>
+					<label for="event-name">Name of event</label>
+					<input name="event-name" type="text" required />
+				</li>
+				<li>						
+					<label for="event-loc">Where?</label>  
+					<input id="event-loc" name="event-loc" list="venues" type="text" required />
+					<datalist id="venues">
+							<option value="Barbican">
+							<option value="Bush Hall">
+							<option value="Brixton Academy">
+							<option value="Cafe Oto">
+							<option value="Cineworld">
+							<option value="Green Note">
+							<option value="Hackney Empire">
+							<option value="Halfmoon Putney">
+							<option value="Hammersmith Apollo">
+							<option value="Hyde Park">
+							<option value="Kentish Town Forum">
+							<option value="Kings Head">
+							<option value="Lyceum">
+							<option value="National Gallery">
+							<option value="O2 Arena">
+							<option value="Orange Tree Theatre">
+							<option value="Palladium">
+							<option value="Riverside Studios">
+							<option value="Roundhouse">
+							<option value="Royal Albert Hall">
+							<option value="Royal Festival Hall">
+							<option value="Royal Opera House">
+							<option value="Sheperds Bush Empire">
+							<option value="Tate">
+							<option value="Tricyle">
+							<option value="Union Chapel">
+							<option value="Wembley Arena">
+							<option value="Wilmots Music Hall">
+						</datalist>
+					<button onclick="getLocation();" value="Get my location" class="genericButton">Use my current location</button> 
+				</li>
+				<li>
+					<label for="event-date">Date</label>
+					<input id="event-date" name="event-date" type="date" value="2011-10-13" required></input>
+				</li>
+				<li>
+					<label for="event-description">Description</label>
+					<textarea rows="6" cols="30"></textarea>
+				</li>
+				<li>
+					<label for="event-price">Price</label>
+					<input id="event-price" name="event-price" type="text" placeholder="Free" required />
+				</li>
+				<li>
+					<label for="event-type">Category</label>
+					<select name="event-type">
+						<option>Art</option>
+						<option>Food</option>
+						<option>Music</option>
+						<option>Theatre/Shows</option>
+					</select>
+				</li>
+				<li>
+					<button id="submit-event" class="genericButton" type="submit">Submit event</button>
+				</li>
+				<li>
+					<button id="save-as-draft" class="genericButton" type="submit">Save as draft</button>
+				</li>
+		</form>
+	</div>
+
+<!-- Scripts -->
+<script type="text/javascript">
+	// datepicker stuff
+	var datefield=document.createElement("input")
+	datefield.setAttribute("type", "date")
+</script>
+
+
+<script type="text/javascript">
+	// More datepicker stuff	
+	if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+		jQuery(function($){ //on document.ready
+			$('#event-date').datepicker({dateFormat: 'yy-mm-dd'});
+		})
+	}	
+	
+	// geolocation stuff
+	function showLocation(position) {
+		var latitude = position.coords.latitude;
+		var longitude = position.coords.longitude;
+		
+		// reverse geoCode the coords
+		var latlng = new google.maps.LatLng(latitude, longitude);
+		if (GBrowserIsCompatible()) {
+			geocoder = new GClientGeocoder();
+		}
+		
+		var myLatLonString = "Lat: " + latitude + " Lon: " + longitude;
+		geocoder.getLocations(latlng, function(addresses) {
+			if(addresses.Status.code != 200) {
+				$('#event-form-wrapper #event-loc').attr("value", myLatLonString);
+			}else{
+				address = addresses.Placemark[0];
+				$('#event-form-wrapper #event-loc').attr("value", address.address);
+			}
+        });
+		
+	}
+
+	function errorHandler(err) {
+	  if(err.code == 1) {
+		alert("Bollocks! Access is denied");
+	  }else if( err.code == 2) {
+		alert("Grrr! Your position is unavailable");
+	  }
+	}
+	
+	function getLocation(){
+	   if(navigator.geolocation){
+		  // timeout at 60000 milliseconds (60 seconds)
+		  var options = {timeout:60000};
+		  navigator.geolocation.getCurrentPosition(showLocation, 
+												   errorHandler,
+												   options);
+	   }else{
+		  alert("Sorry. Your browser does not support this feature.");
+	   }
+	}
+	
+</script>
+<script src="js/plugins.js"></script>
+<script src="js/script.js"></script>
+<script src="js/mylibs/helper.js"></script>
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<script src="js/libs/imgsizer.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+// iOS scale bug fix
+MBP.scaleFix();
+
+// Respond.js
+yepnope({
+	test : Modernizr.mq('(min-width)'),
+	nope : ['js/libs/respond.min.js']
+});
+</script>
+
+
+
+</body>
+</html>
