@@ -66,15 +66,15 @@
 	</header>
 	<nav>
 		<ul class="clearfix">
-			<li><a href="">nav</a></li>
-			<li><a href="">nav</a></li>
+			<li><a href="">My events</a></li>
+			<li><a href="">Add new event</a></li>
 		</ul>
 	</nav>
 	
 	<div id="my-events-wrapper">
 		<ul>
 			<li>Event 1 <a class="edit-event" href="">Edit</a> <a class="delete-event" href="">Delete</a> <a class="delete-event" href="">Duplicate</a></li>
-			<li>Event 2 <a class="edit-event" href="">Edit</a> <a class="delete-event" href="">Delete</a> <a class="delete-event" href="">Duplicate</a></li>
+			<li>Event 2 <a class="edit-event" href="">Edit</a> <a class="delete-event" href="">Delete</a> <a class="duplicate-event" href="">Duplicate</a></li>
 		</ul>
 	</div>
 	
@@ -83,7 +83,7 @@
 			<ul>
 				<li>
 					<label for="event-name">Name of event</label>
-					<input name="event-name" type="text" required />
+					<input id="event-name" name="event-name" type="text" required />
 				</li>
 				<li>						
 					<label for="event-loc">Where?</label>  
@@ -126,7 +126,7 @@
 				</li>
 				<li>
 					<label for="event-description">Description</label>
-					<textarea rows="6" cols="30"></textarea>
+					<textarea id="event-description" rows="6" cols="30"></textarea>
 				</li>
 				<li>
 					<label for="event-price">Price</label>
@@ -134,7 +134,7 @@
 				</li>
 				<li>
 					<label for="event-type">Category</label>
-					<select name="event-type">
+					<select id="event-type" name="event-type">
 						<option>Art</option>
 						<option>Food</option>
 						<option>Music</option>

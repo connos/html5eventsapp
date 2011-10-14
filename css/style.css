@@ -1,0 +1,785 @@
+/* _________________________________________________
+
+320 and Up boilerplate extension
+Andy Clarke http://about.me/malarkey
+Keith Clark 
+Version: 2
+URL: http://stuffandnonsense.co.uk/projects/320andup/
+License: http://creativecommons.org/licenses/MIT/
+_____________________________________________________
+
+1 ROOT
+2 HEADINGS
+3 TYPOGRAPHY
+4 LINKS
+5 FIGURES & IMAGES
+6 TABLES
+7 FORMS
+8 BANNER
+9 NAVIGATION
+10 CONTENT
+11 MAIN
+12 COMPLEMENTARY
+13 CONTENTINFO
+14 GLOBAL OBJECTS
+15 VENDOR-SPECIFIC 
+16 MODERNIZR
+17 TEMPLATE SPECIFICS
+18 MEDIA QUERIES
+
+COLOURS 
+
+*/
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { 
+display : block; }
+
+audio[controls], canvas, video { 
+display : inline-block; 
+*display : inline; 
+*zoom : 1; }
+
+/* 1. ROOT ============================================================================= */
+
+html {
+overflow-y : scroll;
+background : rgb(70,70,70); 
+/*background : rgb(255,255,255) url(../img/tmp/grid.png) repeat-y 50% 0;*/ }
+
+body { 
+margin : 0 auto;
+padding : 0;
+font : 100%/1.4 "Helvetica Neue", Helvetica, Arial;
+color : rgb(255,255,255); 
+background-color : transparent; }
+
+button, 
+input, 
+select, 
+textarea { 
+font-family : "Helvetica Neue", Helvetica, Arial, sans-serif; 
+color : rgb(40,40,40); }
+
+/* 2. HEADINGS (320 and Up typography defaults) ==================================================== */
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+font-family : "Helvetica Neue", Helvetica, Arial;
+font-weight : bold; }
+
+h1 { 
+margin-bottom : .75em;
+font-size : 3em; /* 48 / 16 = 3 */
+line-height : 1.2; }
+
+h2 { 
+margin-bottom : .75em;
+font-size : 2em; /* 36 / 16 = 2 */
+line-height : 1.2; }
+
+h3 { 
+margin-bottom : 1em;
+font-size : 1.5em; /* 24 / 16 = 1.5 */
+line-height : 1.3; }
+
+h4 { 
+margin-bottom : 1.25em;
+font-size : 1.25em; /* 20 / 16 = 1.25 */
+line-height : 1.25; }
+
+h5 { 
+margin-bottom : 1.5em;
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+h6 { 
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+/* 3. TYPOGRAPHY (320 and Up typography defaults) ============================================================================= */
+
+p, 
+ol, 
+ul, 
+dl, 
+address { 
+margin-bottom : 1.5em; 
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+p {
+hyphens : auto; 
+text-align : justify; }
+
+ul, 
+ol { 
+margin : 0 0 1.5em -24px; 
+padding : 0 0 0 24px; }
+
+li ul, 
+li ol { 
+margin : 0;
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+dl, 
+dd { 
+margin-bottom : 1.5em; }
+
+dt { 
+font-weight : normal; }
+
+blockquote  { 
+margin : 0 0 1.5em -24px; 
+padding-left : 24px; 
+border-left : 1px solid rgb(200,200,200);
+font-style : italic; }
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {
+content : '';
+content : none; }
+
+abbr[title] { 
+border-bottom : 1px dotted; 
+cursor : help; }
+
+b, strong { 
+font-weight : bold; }
+
+dfn { 
+font-style : italic; }
+
+hr { 
+display : block; 
+margin : 1em 0; 
+padding : 0;
+height : 1px; 
+border : 0; 
+border-top : 1px solid rgb(204,204,204); }
+
+ins { 
+background-color : rgb(240,240,240); 
+color : rgb(0,0,0); 
+text-decoration : none; }
+
+mark { 
+background-color : rgb(240,240,240); 
+color: rgb(0,0,0); 
+font-style : italic; 
+font-weight : bold; }
+
+pre, 
+code, 
+kbd, 
+samp { 
+font-family : monospace, monospace; 
+_font-family : 'courier new', monospace; 
+font-size : .875em; 
+line-height : 1.5; }
+
+pre { 
+white-space : pre; 
+white-space : pre-wrap; 
+word-wrap : break-word; }
+
+q { 
+quotes : none; }
+
+q:before, 
+q:after { 
+content : ""; 
+content : none; }
+
+small { 
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+sub, sup { 
+font-size : 75%; 
+line-height : 0; 
+position : relative; 
+vertical-align : baseline; }
+
+sup { 
+top : -.5em; }
+
+sub { 
+bottom : -.25em; }
+
+/* 4.LINKS ============================================================================= */
+
+a { 
+color : rgb(237,26,36);
+text-decoration: none; }
+
+a:visited { 
+color : rgb(237,26,36); }
+
+a:focus { 
+outline : thin dotted; 
+color : rgb(237,26,36); }
+
+a:hover, 
+a:active { 
+outline : 0;
+text-decoration: underline; }
+
+/* 5.FIGURES & IMAGES ============================================================================= */
+
+figure {
+margin-bottom : 1.5em; }
+
+figure img,
+figure object,
+figure embed {
+margin-bottom : .75em;
+max-width : 100%; }
+
+figcaption {
+display : block;
+font-weight : normal; }
+
+img {
+border : 0; }
+
+svg:not(:root) {
+overflow : hidden; }
+
+/* 6.TABLES ============================================================================= */
+
+table { 
+border-collapse : collapse;
+border-spacing : 0;
+margin-bottom : 1.4em; 
+width : 100%;
+font-size : .875em; /* 14 / 16 = .875 */ }
+
+th, td, caption { 
+padding : .25em 10px .25em 5px; }
+
+tfoot { 
+font-style : italic; }
+
+caption { 
+background-color : transparent; }
+
+/* 7.FORMS ============================================================================= */
+
+form { 
+margin : 0; }
+
+fieldset { 
+margin-bottom : 1.5em; 
+padding : 0; 
+border-width : 0; }
+
+legend { 
+*margin-left : -7px; 
+padding : 0; 
+border-width : 0; }
+
+label { 
+font-weight : normal;
+cursor : pointer; }
+
+button, 
+input, 
+select, 
+textarea { 
+font-size : 100%; 
+margin : 0; 
+vertical-align : baseline; 
+*vertical-align : middle; }
+
+button, input { 
+line-height : normal; 
+*overflow : visible; }
+
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] { 
+cursor : pointer; }
+
+input[type="checkbox"], 
+input[type="radio"] { 
+box-sizing : border-box; }
+
+input[type="search"] { 
+box-sizing : content-box; }
+
+button::-moz-focus-inner, 
+input::-moz-focus-inner { 
+padding : 0;
+border : 0;  }
+
+textarea { 
+overflow : auto; 
+vertical-align : top; }
+
+/* Colors for form validity */
+input:valid, 
+textarea:valid   {  
+/* Styles */ }
+
+input:invalid, 
+textarea:invalid {
+/*
+-webkit-box-shadow : 0 0 2px rgb(255,0,0); 
+-moz-box-shadow : 0 0 2px rgb(255,0,0);
+box-shadow : 0 0 2px rgb(255,0,0); 
+*/
+}
+
+.no-boxshadow input:invalid, 
+.no-boxshadow textarea:invalid {
+background-color : rgb(240,221,221); }
+
+/* 8 BANNER 		============================================================================= */
+/* 9 NAVIGATION 	============================================================================= */
+/* 10 CONTENT 		============================================================================= */
+/* 11 MAIN 			=============================================================================
+  */
+body {
+	padding-top: 40px;
+}
+header {
+	position: fixed;
+	top: 0;
+	height: 40px;
+	width: 100%;
+	background: #222;
+	z-index: 100;
+	box-shadow: inset 0 0 15px #000;
+	border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+header h1 {
+	font-size: 1.125em;
+	margin: 10px 0 0;
+	text-align: center;
+}
+nav ul {
+	list-style: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 101;
+	clear: both;
+}
+nav li:first-child {
+	float: left;
+	display: none;
+}
+nav li:first-child a,
+nav li:last-child a {
+	margin: 7px 0 0 20px;
+	background: #222; /* Old browsers #ca090e */
+	background: -moz-linear-gradient(top, #444 0%, #111 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#444), color-stop(100%,#111)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #444 0%,#111 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #444 0%,#111 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #444 0%,#111 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444', endColorstr='#111',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, #444 0%,#111 100%); /* W3C */
+	display: inline-block; 
+	padding: 5px 10px; 
+	color: #DDD; 
+	text-decoration: none;
+	-moz-border-radius: 3px; 
+	-webkit-border-radius: 3px;
+	border-radius: 3px; 
+	-moz-box-shadow: 1px 1px 0 rgba(255,255,255, 0.11);
+	-webkit-box-shadow: 1px 1px 0 rgba(255,255,255, 0.11));
+	box-shadow: 1px 1px 0 rgba(255,255,255, 0.11);
+	border: 1px solid #000;
+	border-bottom: none;
+	border-right: none;
+	position: relative;
+	cursor: pointer;
+	font-size: 14px; 
+	font-weight: bold; 
+	line-height: 1; 
+	text-shadow: -1px -1px 0 rgba(0,0,0, 0.8); 
+}
+nav li:first-child a:hover,
+nav li:last-child a:hover { 
+	background: #000; /* Old browsers #ca090e */
+	background: -moz-linear-gradient(top, #222 0%, #000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222), color-stop(100%,#000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #222 0%,#000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #222 0%,#000 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #222 0%,#000 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#000',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, #222 0%,#000 100%); /* W3C */
+	color: #FFF; 
+}
+nav li:first-child a:active, nav li:last-child a:active { top: 1px; }
+
+nav li:last-child {
+	float: right;
+}
+nav li:last-child a {
+	margin: 5px 20px 0 0;
+}
+
+#my-events-wrapper {
+	float: left;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 25%;
+}
+#my-events-wrapper ul {
+	list-style: none;
+}
+#my-events-wrapper ul li {
+	padding: 6px 20px;
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #333;
+}
+#my-events-wrapper ul li:hover {
+	background-color: rgba(0,0,0, .2);
+	cursor: pointer;
+}
+#my-events-wrapper ul li a {
+	float: right; 
+	text-indent: -999em; 
+	overflow: hidden; 
+	text-align: left; 
+	direction: ltr; 
+	width: 16px;
+	margin: 0 0 0 20px;
+}
+.delete-event {
+	background: url('../img/x_14x14.png') no-repeat 0 50%;
+}
+.edit-event {
+	background: url('../img/pen_16x16.png') no-repeat 0 50%;
+}
+.duplicate-event {
+	background: url('../img/new_window_16x16.png') no-repeat 0 50%;
+}
+
+#event-form-wrapper {
+	float: left;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 75%;
+	background-color: #555;
+	border-left: 1px solid #333;
+	box-shadow: inset 1px 1px 10px rgba(0,0,0, .7);
+}
+#event-form-wrapper ul {
+	list-style: none;
+}
+#event-form-wrapper li {
+	padding: 8px 20px;
+}
+#event-form-wrapper li:nth-of-type(7) {
+	float: left;
+	margin-left: 220px;
+}
+#event-form-wrapper label {
+	float: left;
+	width: 200px;
+	text-align: right;
+	margin-right: 20px;
+	text-shadow: -1px -1px 0 rgba(0,0,0, .5);
+}
+#event-form-wrapper input,
+#event-form-wrapper select,
+#event-form-wrapper textarea {
+	background-color: #CCC;
+	width: 300px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-border-radius: 3px; 
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #333;
+	border-bottom-color: #888;
+	border-right-color: #888;
+}
+#event-form-wrapper input[id="event-loc"] {
+	width: 260px;
+}
+#event-form-wrapper button[onclick] {
+	text-indent: -999em; 
+	overflow: hidden; 
+	text-align: left; 
+	direction: ltr; 
+	width: 30px;
+	margin: 0 0 0 5px;
+	background-image: url('../img/compass_16x16.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-color: #ca090e; /* Old browsers #ca090e */
+	background-image: url('../img/compass_16x16.png'), -moz-linear-gradient(top, #ED1A24 0%, #ca090e 100%); /* FF3.6+ */
+	background-image: url('../img/compass_16x16.png'), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ED1A24), color-stop(100%,#ca090e)); /* Chrome,Safari4+ */
+	background-image: url('../img/compass_16x16.png'), -webkit-linear-gradient(top, #ED1A24 0%,#ca090e 100%); /* Chrome10+,Safari5.1+ */
+	background-image: url('../img/compass_16x16.png'), -o-linear-gradient(top, #ED1A24 0%,#ca090e 100%); /* Opera11.10+ */
+	background-image: url('../img/compass_16x16.png'), -ms-linear-gradient(top, #ED1A24 0%,#ca090e 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ED1A24', endColorstr='#ca090e',GradientType=0 ); /* IE6-9 */
+	background-image: url('../img/compass_16x16.png'), linear-gradient(top, #ED1A24 0%,#ca090e 100%); /* W3C */
+	
+}
+
+/* 12 COMPLEMENTARY ============================================================================= */
+/* 13 CONTENTINFO 	============================================================================= */
+
+/* 14 GLOBAL OBJECTS ============================================================================= */
+
+.clearfix:before, 
+.clearfix:after { 
+content : "\0020"; 
+display : block; 
+height : 0; 
+overflow : hidden; }
+
+.clearfix:after { 
+clear : both; }
+
+.genericButton, .genericButton:visited {
+	background: #ca090e; /* Old browsers #ca090e */
+	background: -moz-linear-gradient(top, #ED1A24 0%, #ca090e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ED1A24), color-stop(100%,#ca090e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ED1A24 0%,#ca090e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ED1A24 0%,#ca090e 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #ED1A24 0%,#ca090e 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ED1A24', endColorstr='#ca090e',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, #ED1A24 0%,#ca090e 100%); /* W3C */
+	display: inline-block; 
+	padding: 5px 10px; 
+	color: #000; 
+	text-decoration: none;
+	-moz-border-radius: 3px; 
+	-webkit-border-radius: 3px;
+	border-radius: 3px; 
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	font-size: 16px; 
+	font-weight: bold; 
+	line-height: 1; 
+	text-shadow: 1px 1px 0 rgba(255,255,255, 0.2); 
+}
+.genericButton:hover { 
+	background: #ED1A24; /* Old browsers #ca090e */
+	background: -moz-linear-gradient(top, #ca090e 0%, #ca090e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ca090e), color-stop(100%,#ca090e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ca090e 0%,#ca090e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ca090e 0%,#ca090e 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #ca090e 0%,#ca090e 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E39B0D', endColorstr='#CF740C',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, #ca090e 0%,#ca090e 100%); /* W3C */
+	color: #000; 
+}
+.genericButton:active { top: 1px; }
+
+/* 15 VENDOR-SPECIFIC ============================================================================= */
+
+html { 
+-webkit-overflow-scrolling : touch; 
+-webkit-tap-highlight-color : rgb(52,158,219); 
+-webkit-text-size-adjust : 100%; 
+-ms-text-size-adjust : 100%; }
+
+.clearfix { 
+zoom : 1; }
+
+::-webkit-selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+::-moz-selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+::selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] { 
+-webkit-appearance : button; }
+
+::-webkit-input-placeholder {
+color: #282828;
+/*font-size : .875em; 
+line-height : 1.4; */}
+
+input:-moz-placeholder { 
+/*font-size : .875em; 
+line-height : inherit; */}
+
+.ie7 img,
+.iem7 img { 
+-ms-interpolation-mode : bicubic; }
+
+input[type="checkbox"], 
+input[type="radio"] { 
+box-sizing : border-box; }
+
+input[type="search"] { 
+-webkit-box-sizing : content-box;
+-moz-box-sizing : content-box; }
+
+button::-moz-focus-inner, 
+input::-moz-focus-inner { 
+padding : 0;
+border : 0; }
+
+p {
+/* http://www.w3.org/TR/css3-text/#hyphenation */
+-webkit-hyphens : auto;
+-webkit-hyphenate-character : "\2010";
+-webkit-hyphenate-limit-after : 1;
+-webkit-hyphenate-limit-before : 3;
+-moz-hyphens : auto; }
+
+/* Non-semantic helper classes 
+
+.ir { display : block; 
+overflow : hidden; 
+background-repeat : no-repeat; 
+text-align : left; 
+text-indent : -999em; 
+direction : ltr; }
+
+.ir br { 
+display : none; }
+
+.hidden { 
+display : none; 
+visibility: hidden; }
+
+.visuallyhidden { 
+position : absolute;
+margin : -1px;
+padding : 0;
+height  : 1px;
+width : 1px;
+overflow : hidden;
+border : 0; 
+clip : rect(0 0 0 0); }
+
+.visuallyhidden.focusable:active, 
+.visuallyhidden.focusable:focus { 
+position: static;
+margin : 0; 
+height : auto; 
+width : auto;
+overflow: visible; 
+clip : auto; }
+
+.invisible { 
+visibility : hidden; } */
+
+/* 16 MODERNIZR ============================================================================= */
+
+/* audio */
+/* applicationcache */
+/* backgroundsize */
+/* borderimage */
+/* borderradius */
+/* boxshadow */
+/* canvas */
+/* canvastext */
+/* cssanimations */
+/* csscolumns */
+/* cssgradients */
+/* cssreflections*/
+/* csstransforms */
+/* csstransforms3d */
+/* csstransitions */
+/* draganddrop */
+/* flexbox */
+/* fontface */
+/* geolocation */
+/* hashchange */
+/* history */
+/* hsla */
+/* indexeddb */
+/* inlinesvg */
+/* localstorage */
+/* multiplebgs */
+/* opacity */
+/* postmessage */
+/* rgba */
+/* sessionstorage */
+/* smil */
+/* svg */
+/* svgclippaths */
+/* textshadow */
+/* touch */
+/* video */
+/* webgl */
+/* websqldatabase */
+/* websockets */
+/* webworkers */
+
+/* 17 TEMPLATE SPECIFICS ============================================================================= */
+
+/* 18 MEDIA QUERIES ============================================================================= */
+
+@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 767px) {
+	#my-events-wrapper {
+		float: left;
+		width: 100%;
+		position: absolute;
+	}
+
+	#event-form-wrapper {
+		float: left;
+		display: none;
+		width: 100%;
+		min-height: auto !important;
+		position: absolute;
+		left: 100%;
+	}
+}
+
+/* 480px */
+@media only screen and (min-width: 480px) {
+
+}
+
+/* 600px */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* 768px */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* 992px */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* 1382px */
+@media only screen and (min-width: 1382px) {
+
+}
+
+/* 2x */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+only screen and (-o-min-device-pixel-ratio: 3/2), 
+only screen and (min-device-pixel-ratio: 1.5) {
+
+}
